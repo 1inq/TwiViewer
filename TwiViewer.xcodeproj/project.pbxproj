@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3481D158089D57F3EC2A5CC6 /* Pods_TwiViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9839F38F50AFCA1F6B4BB06 /* Pods_TwiViewer.framework */; };
+		7306FA261FCE9EFB00A5C951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA251FCE9EFB00A5C951 /* AppDelegate.swift */; };
+		7306FA2B1FCE9EFB00A5C951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7306FA291FCE9EFB00A5C951 /* Main.storyboard */; };
+		7306FA2E1FCE9EFB00A5C951 /* TwiViewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA2C1FCE9EFB00A5C951 /* TwiViewer.xcdatamodeld */; };
+		7306FA301FCE9EFB00A5C951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7306FA2F1FCE9EFB00A5C951 /* Assets.xcassets */; };
+		7306FA331FCE9EFB00A5C951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7306FA311FCE9EFB00A5C951 /* LaunchScreen.storyboard */; };
+		7306FA3B1FCEA18800A5C951 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA3A1FCEA18800A5C951 /* WelcomeViewController.swift */; };
+		7306FA3D1FCEAA8900A5C951 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA3C1FCEAA8900A5C951 /* LoginViewController.swift */; };
+		7306FA3F1FCEB30700A5C951 /* LoingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA3E1FCEB30700A5C951 /* LoingDelegate.swift */; };
+		7306FA431FCED20D00A5C951 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA421FCED20D00A5C951 /* User.swift */; };
+		7306FA461FCED25B00A5C951 /* ConnectionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA451FCED25B00A5C951 /* ConnectionClient.swift */; };
+		7306FA481FCEDA6400A5C951 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7306FA471FCEDA6400A5C951 /* Default-568h@2x.png */; };
+		73AF9FA61FCEE39300A02CDA /* ApplicationCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF9FA51FCEE39300A02CDA /* ApplicationCredentials.swift */; };
+		73AF9FA81FCF357E00A02CDA /* TestHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF9FA71FCF357E00A02CDA /* TestHandle.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B7DE32D796EEF5E1B8C9D1C /* Pods-TwiViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwiViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwiViewer/Pods-TwiViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		7306FA221FCE9EFB00A5C951 /* TwiViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwiViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7306FA251FCE9EFB00A5C951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7306FA2A1FCE9EFB00A5C951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7306FA2D1FCE9EFB00A5C951 /* TwiViewer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwiViewer.xcdatamodel; sourceTree = "<group>"; };
+		7306FA2F1FCE9EFB00A5C951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7306FA321FCE9EFB00A5C951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7306FA341FCE9EFB00A5C951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7306FA3A1FCEA18800A5C951 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		7306FA3C1FCEAA8900A5C951 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7306FA3E1FCEB30700A5C951 /* LoingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoingDelegate.swift; sourceTree = "<group>"; };
+		7306FA421FCED20D00A5C951 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7306FA451FCED25B00A5C951 /* ConnectionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionClient.swift; sourceTree = "<group>"; };
+		7306FA471FCEDA6400A5C951 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		73AF9FA51FCEE39300A02CDA /* ApplicationCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCredentials.swift; sourceTree = "<group>"; };
+		73AF9FA71FCF357E00A02CDA /* TestHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHandle.swift; sourceTree = "<group>"; };
+		B9839F38F50AFCA1F6B4BB06 /* Pods_TwiViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwiViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F89C12CE21DEF4EE24949549 /* Pods-TwiViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwiViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwiViewer/Pods-TwiViewer.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7306FA1F1FCE9EFB00A5C951 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3481D158089D57F3EC2A5CC6 /* Pods_TwiViewer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07E3FC126B2C9281570FEB0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9839F38F50AFCA1F6B4BB06 /* Pods_TwiViewer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7306FA191FCE9EFB00A5C951 = {
+			isa = PBXGroup;
+			children = (
+				7306FA471FCEDA6400A5C951 /* Default-568h@2x.png */,
+				7306FA241FCE9EFB00A5C951 /* TwiViewer */,
+				7306FA231FCE9EFB00A5C951 /* Products */,
+				AE9BCE0DA292FA30D1AD4C68 /* Pods */,
+				07E3FC126B2C9281570FEB0B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7306FA231FCE9EFB00A5C951 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7306FA221FCE9EFB00A5C951 /* TwiViewer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7306FA241FCE9EFB00A5C951 /* TwiViewer */ = {
+			isa = PBXGroup;
+			children = (
+				7306FA341FCE9EFB00A5C951 /* Info.plist */,
+				7306FA251FCE9EFB00A5C951 /* AppDelegate.swift */,
+				7306FA3E1FCEB30700A5C951 /* LoingDelegate.swift */,
+				7306FA411FCED1AB00A5C951 /* Views */,
+				7306FA401FCED17200A5C951 /* Controllers */,
+				7306FA441FCED21300A5C951 /* Models */,
+			);
+			path = TwiViewer;
+			sourceTree = "<group>";
+		};
+		7306FA401FCED17200A5C951 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7306FA3A1FCEA18800A5C951 /* WelcomeViewController.swift */,
+				7306FA3C1FCEAA8900A5C951 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7306FA411FCED1AB00A5C951 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7306FA291FCE9EFB00A5C951 /* Main.storyboard */,
+				7306FA2F1FCE9EFB00A5C951 /* Assets.xcassets */,
+				7306FA311FCE9EFB00A5C951 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7306FA441FCED21300A5C951 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7306FA421FCED20D00A5C951 /* User.swift */,
+				7306FA451FCED25B00A5C951 /* ConnectionClient.swift */,
+				73AF9FA51FCEE39300A02CDA /* ApplicationCredentials.swift */,
+				73AF9FA71FCF357E00A02CDA /* TestHandle.swift */,
+				7306FA2C1FCE9EFB00A5C951 /* TwiViewer.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AE9BCE0DA292FA30D1AD4C68 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B7DE32D796EEF5E1B8C9D1C /* Pods-TwiViewer.debug.xcconfig */,
+				F89C12CE21DEF4EE24949549 /* Pods-TwiViewer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7306FA211FCE9EFB00A5C951 /* TwiViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7306FA371FCE9EFB00A5C951 /* Build configuration list for PBXNativeTarget "TwiViewer" */;
+			buildPhases = (
+				22575BE54E374A0ABF76F42C /* [CP] Check Pods Manifest.lock */,
+				7306FA1E1FCE9EFB00A5C951 /* Sources */,
+				7306FA1F1FCE9EFB00A5C951 /* Frameworks */,
+				7306FA201FCE9EFB00A5C951 /* Resources */,
+				088C8EEAEE40014A6D3F746B /* [CP] Embed Pods Frameworks */,
+				A46D26196B0140D62636DCB0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwiViewer;
+			productName = TwiViewer;
+			productReference = 7306FA221FCE9EFB00A5C951 /* TwiViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7306FA1A1FCE9EFB00A5C951 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Александр Сорокин";
+				TargetAttributes = {
+					7306FA211FCE9EFB00A5C951 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7306FA1D1FCE9EFB00A5C951 /* Build configuration list for PBXProject "TwiViewer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7306FA191FCE9EFB00A5C951;
+			productRefGroup = 7306FA231FCE9EFB00A5C951 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7306FA211FCE9EFB00A5C951 /* TwiViewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7306FA201FCE9EFB00A5C951 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7306FA331FCE9EFB00A5C951 /* LaunchScreen.storyboard in Resources */,
+				7306FA481FCEDA6400A5C951 /* Default-568h@2x.png in Resources */,
+				7306FA301FCE9EFB00A5C951 /* Assets.xcassets in Resources */,
+				7306FA2B1FCE9EFB00A5C951 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		088C8EEAEE40014A6D3F746B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TwiViewer/Pods-TwiViewer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwiftAlamofire/OAuthSwiftAlamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwiftAlamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwiViewer/Pods-TwiViewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22575BE54E374A0ABF76F42C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TwiViewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A46D26196B0140D62636DCB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwiViewer/Pods-TwiViewer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7306FA1E1FCE9EFB00A5C951 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7306FA3D1FCEAA8900A5C951 /* LoginViewController.swift in Sources */,
+				73AF9FA61FCEE39300A02CDA /* ApplicationCredentials.swift in Sources */,
+				7306FA3F1FCEB30700A5C951 /* LoingDelegate.swift in Sources */,
+				7306FA431FCED20D00A5C951 /* User.swift in Sources */,
+				7306FA3B1FCEA18800A5C951 /* WelcomeViewController.swift in Sources */,
+				73AF9FA81FCF357E00A02CDA /* TestHandle.swift in Sources */,
+				7306FA2E1FCE9EFB00A5C951 /* TwiViewer.xcdatamodeld in Sources */,
+				7306FA461FCED25B00A5C951 /* ConnectionClient.swift in Sources */,
+				7306FA261FCE9EFB00A5C951 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7306FA291FCE9EFB00A5C951 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7306FA2A1FCE9EFB00A5C951 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7306FA311FCE9EFB00A5C951 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7306FA321FCE9EFB00A5C951 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7306FA351FCE9EFB00A5C951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7306FA361FCE9EFB00A5C951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7306FA381FCE9EFB00A5C951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B7DE32D796EEF5E1B8C9D1C /* Pods-TwiViewer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 94KQVV6UKU;
+				INFOPLIST_FILE = TwiViewer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AS.TwiViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7306FA391FCE9EFB00A5C951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F89C12CE21DEF4EE24949549 /* Pods-TwiViewer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 94KQVV6UKU;
+				INFOPLIST_FILE = TwiViewer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AS.TwiViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7306FA1D1FCE9EFB00A5C951 /* Build configuration list for PBXProject "TwiViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7306FA351FCE9EFB00A5C951 /* Debug */,
+				7306FA361FCE9EFB00A5C951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7306FA371FCE9EFB00A5C951 /* Build configuration list for PBXNativeTarget "TwiViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7306FA381FCE9EFB00A5C951 /* Debug */,
+				7306FA391FCE9EFB00A5C951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7306FA2C1FCE9EFB00A5C951 /* TwiViewer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7306FA2D1FCE9EFB00A5C951 /* TwiViewer.xcdatamodel */,
+			);
+			currentVersion = 7306FA2D1FCE9EFB00A5C951 /* TwiViewer.xcdatamodel */;
+			path = TwiViewer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7306FA1A1FCE9EFB00A5C951 /* Project object */;
+}
