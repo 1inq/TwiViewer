@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TwiViewer/Models/Tweet+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:TwiViewer/Models/Tweet+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:TwiViewer.xcodeproj">
    </FileRef>
    <FileRef

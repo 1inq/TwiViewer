@@ -23,10 +23,16 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>TwiViewer</string>
+				<string>twitterkit-w1xOoTcsyrjzpXVETeD2mCryb</string>
 			</array>
 		</dict>
+		<dict/>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+		<array>
+	    <string>twitter</string>
+	    <string>twitterauth</string>
+		</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>

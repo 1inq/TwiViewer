@@ -14,13 +14,13 @@
 		7306FA301FCE9EFB00A5C951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7306FA2F1FCE9EFB00A5C951 /* Assets.xcassets */; };
 		7306FA331FCE9EFB00A5C951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7306FA311FCE9EFB00A5C951 /* LaunchScreen.storyboard */; };
 		7306FA3B1FCEA18800A5C951 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA3A1FCEA18800A5C951 /* WelcomeViewController.swift */; };
-		7306FA3D1FCEAA8900A5C951 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA3C1FCEAA8900A5C951 /* LoginViewController.swift */; };
-		7306FA3F1FCEB30700A5C951 /* LoingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA3E1FCEB30700A5C951 /* LoingDelegate.swift */; };
-		7306FA431FCED20D00A5C951 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA421FCED20D00A5C951 /* User.swift */; };
 		7306FA461FCED25B00A5C951 /* ConnectionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA451FCED25B00A5C951 /* ConnectionClient.swift */; };
 		7306FA481FCEDA6400A5C951 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7306FA471FCEDA6400A5C951 /* Default-568h@2x.png */; };
+		73878ACA1FD1D0AC00EE109D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73878AC91FD1D0AC00EE109D /* HomeViewController.swift */; };
 		73AF9FA61FCEE39300A02CDA /* ApplicationCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF9FA51FCEE39300A02CDA /* ApplicationCredentials.swift */; };
 		73AF9FA81FCF357E00A02CDA /* TestHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF9FA71FCF357E00A02CDA /* TestHandle.swift */; };
+		73D0B5E81FD3EEEF002DB597 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D0B5E71FD3EEE0002DB597 /* SafariServices.framework */; };
+		73D0B5EA1FD4244E002DB597 /* TweetsCData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0B5E91FD4244E002DB597 /* TweetsCData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,13 +33,13 @@
 		7306FA321FCE9EFB00A5C951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7306FA341FCE9EFB00A5C951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7306FA3A1FCEA18800A5C951 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		7306FA3C1FCEAA8900A5C951 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		7306FA3E1FCEB30700A5C951 /* LoingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoingDelegate.swift; sourceTree = "<group>"; };
-		7306FA421FCED20D00A5C951 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7306FA451FCED25B00A5C951 /* ConnectionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionClient.swift; sourceTree = "<group>"; };
 		7306FA471FCEDA6400A5C951 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		73878AC91FD1D0AC00EE109D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73AF9FA51FCEE39300A02CDA /* ApplicationCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCredentials.swift; sourceTree = "<group>"; };
 		73AF9FA71FCF357E00A02CDA /* TestHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHandle.swift; sourceTree = "<group>"; };
+		73D0B5E71FD3EEE0002DB597 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		73D0B5E91FD4244E002DB597 /* TweetsCData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsCData.swift; sourceTree = "<group>"; };
 		B9839F38F50AFCA1F6B4BB06 /* Pods_TwiViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwiViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89C12CE21DEF4EE24949549 /* Pods-TwiViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwiViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwiViewer/Pods-TwiViewer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D0B5E81FD3EEEF002DB597 /* SafariServices.framework in Frameworks */,
 				3481D158089D57F3EC2A5CC6 /* Pods_TwiViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +60,7 @@
 		07E3FC126B2C9281570FEB0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73D0B5E71FD3EEE0002DB597 /* SafariServices.framework */,
 				B9839F38F50AFCA1F6B4BB06 /* Pods_TwiViewer.framework */,
 			);
 			name = Frameworks;
@@ -88,7 +90,6 @@
 			children = (
 				7306FA341FCE9EFB00A5C951 /* Info.plist */,
 				7306FA251FCE9EFB00A5C951 /* AppDelegate.swift */,
-				7306FA3E1FCEB30700A5C951 /* LoingDelegate.swift */,
 				7306FA411FCED1AB00A5C951 /* Views */,
 				7306FA401FCED17200A5C951 /* Controllers */,
 				7306FA441FCED21300A5C951 /* Models */,
@@ -100,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				7306FA3A1FCEA18800A5C951 /* WelcomeViewController.swift */,
-				7306FA3C1FCEAA8900A5C951 /* LoginViewController.swift */,
+				73878AC91FD1D0AC00EE109D /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -109,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				7306FA291FCE9EFB00A5C951 /* Main.storyboard */,
-				7306FA2F1FCE9EFB00A5C951 /* Assets.xcassets */,
 				7306FA311FCE9EFB00A5C951 /* LaunchScreen.storyboard */,
+				7306FA2F1FCE9EFB00A5C951 /* Assets.xcassets */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,11 +119,11 @@
 		7306FA441FCED21300A5C951 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7306FA421FCED20D00A5C951 /* User.swift */,
 				7306FA451FCED25B00A5C951 /* ConnectionClient.swift */,
 				73AF9FA51FCEE39300A02CDA /* ApplicationCredentials.swift */,
 				73AF9FA71FCF357E00A02CDA /* TestHandle.swift */,
 				7306FA2C1FCE9EFB00A5C951 /* TwiViewer.xcdatamodeld */,
+				73D0B5E91FD4244E002DB597 /* TweetsCData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,9 +255,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TwiViewer/Pods-TwiViewer-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -270,11 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7306FA3D1FCEAA8900A5C951 /* LoginViewController.swift in Sources */,
 				73AF9FA61FCEE39300A02CDA /* ApplicationCredentials.swift in Sources */,
-				7306FA3F1FCEB30700A5C951 /* LoingDelegate.swift in Sources */,
-				7306FA431FCED20D00A5C951 /* User.swift in Sources */,
+				73D0B5EA1FD4244E002DB597 /* TweetsCData.swift in Sources */,
 				7306FA3B1FCEA18800A5C951 /* WelcomeViewController.swift in Sources */,
+				73878ACA1FD1D0AC00EE109D /* HomeViewController.swift in Sources */,
 				73AF9FA81FCF357E00A02CDA /* TestHandle.swift in Sources */,
 				7306FA2E1FCE9EFB00A5C951 /* TwiViewer.xcdatamodeld in Sources */,
 				7306FA461FCED25B00A5C951 /* ConnectionClient.swift in Sources */,

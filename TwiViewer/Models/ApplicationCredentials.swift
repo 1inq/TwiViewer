@@ -9,19 +9,14 @@
 import UIKit
 
 class ApplicationCredentials {
-    var consumerKey : String!
-    var consumerSecret : String!
-    var requestTokenURL : String!
-    var authorizeURL : String!
-    var accessTokenURL: String!
+    static let CONSUMERKEY = "w1xOoTcsyrjzpXVETeD2mCryb"
+    static let  CONSUMERSECRET = "HUsQCFhlCOwGPyTI884S7SuybAZ0VT7LC47p3JwCgaMH9Tb7xY"
+    static let REQUESTTOKENURLURL = "https://api.twitter.com/oauth/request_token"
+    static let AUTHORIZEURL = "https://api.twitter.com/oauth/authorize"
+    static let ACCESSTOKENURLURL = "https://api.twitter.com/oauth/access_token"
     
     static let credentials = ApplicationCredentials()
     
     init() {
-        consumerKey = "w1xOoTcsyrjzpXVETeD2mCryb"
-        consumerSecret = "HUsQCFhlCOwGPyTI884S7SuybAZ0VT7LC47p3JwCgaMH9Tb7xY"
-        requestTokenURL = "https://api.twitter.com/oauth/request_token"
-        authorizeURL = "https://api.twitter.com/oauth/authorize"
-        accessTokenURL = "https://api.twitter.com/oauth/access_token"
     }
 }
