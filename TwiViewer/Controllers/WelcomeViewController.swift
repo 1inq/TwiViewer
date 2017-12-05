@@ -15,19 +15,26 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
-            if (session != nil) {
-                print("signed in as \(session?.userName)");
-                
-                self.openHome()
+        if appDelegate.sessionStore == nil {
+            let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+                if (session != nil) {
+                    print("signed in as \(session?.userName)");
+                    self.appDelegate.sessionStore = session
+                    self.appDelegate.saveSessionStore()
+                    self.openHome()
+                } else {
+                    print("error: \(error?.localizedDescription)");
+                }
+            })
+                logInButton.center = self.view.center
+                self.view.addSubview(logInButton)
             } else {
-                print("error: \(error?.localizedDescription)");
+                if !self.appDelegate.retriveSessionStore()  {print("Fail during retruve storeSession (WelcomeController)")}
+                self.openHome()
             }
-        })
-        logInButton.center = self.view.center
-        self.view.addSubview(logInButton)
-
+    
+    
+    
         //NotificationCenter.default.addObserver(self, selector: #selector(continueLogin), name:ConnectionClient.UserLoggedInNotification.name, object: nil)
         // Do any additional setup after loading the view.
     }
@@ -59,10 +66,7 @@ class WelcomeViewController: UIViewController {
     // MARK -  segues 
     func openHome() {
         self.performSegue(withIdentifier: "HomeSegue", sender: self)
-        /*
-        var homeController = HomeViewController()
-        self.pushViewController(homeController, animated: true)
-         */
+        
     }
     
     func openLoginController() {

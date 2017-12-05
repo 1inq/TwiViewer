@@ -9,6 +9,14 @@
 import Foundation
 import CoreData
 
+struct TweetStruct {
+    var id: String?
+    var name: String?
+    var screenName: String?
+    var image: String?
+    var text: String?
+}
+
 class TweetsCData  {
     
     // MARK: - Core Data stack
@@ -53,6 +61,63 @@ class TweetsCData  {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+    
+    func clearCD() {
+        let tweet = NSEntityDescription.entity(forEntityName: "Tweet", in: persistentContainer.viewContext)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName:"Tweet")
+        //let description = NSEntityDescription.entity(forEntityName: "Tweet", in: persistentContainer.viewContext)
+        do {
+            let resultArray = try persistentContainer.viewContext.execute(request) as! [Tweet]
+            for tweet: Tweet in resultArray {
+                persistentContainer.viewContext.delete(tweet)
+            }
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        
+        
+    }
+    
+    func addObjectsToCD(tweets: [TweetStruct]) {
+        for tweet in tweets {
+            let insertTweet = NSEntityDescription.insertNewObject(forEntityName: "Tweet", into: persistentContainer.viewContext)
+            insertTweet.setValue(tweet.id ?? "", forKey: "id")
+            insertTweet.setValue(tweet.name ?? "", forKey: "name")
+            insertTweet.setValue(tweet.screenName ?? "", forKey: "screen")
+            insertTweet.setValue(tweet.text ?? "", forKey: "text")
+            insertTweet.setValue(tweet.image ?? "", forKey: "image")
+            
+        }
+    }
+    
+    func printCD() {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName:"Tweet")
+        //let description = NSEntityDescription.entity(forEntityName: "Tweet", in: persistentContainer.viewContext)
+        do {
+            let resultArray = try persistentContainer.viewContext.fetch(request) as! [Tweet]
+            for tweet: Tweet in resultArray{
+                print("Tweet ID: ",tweet.id ?? "")
+                print("Tweet ID: ",tweet.name ?? "")
+                print("Tweet ID: ",tweet.screenName ?? "")
+                print("Tweet ID: ",tweet.text ?? "")
+            }
+        }catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
+    
+    func allObjects() -> [Tweet]{
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tweet")
+        do {
+            let fetchedEntities = try persistentContainer.viewContext.fetch(request) as! [Tweet]
+            return fetchedEntities
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
 }

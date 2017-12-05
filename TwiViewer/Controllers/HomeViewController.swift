@@ -12,16 +12,26 @@ import TwitterKit
 class HomeViewController: UITableViewController {
     
     var client : TWTRAPIClient?
+    
+    var tweets: [Tweet] = []
+    var CoreDataInstance = TweetsCData.init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         
+        let logoutButton = UIBarButtonItem(title: "<Logout", style: .plain, target: self, action: #selector(logout))
+        self.navigationController?.navigationItem.leftBarButtonItem = logoutButton
+        
+        
         if let userID = Twitter.sharedInstance().sessionStore.session()?.userID {
             self.client = TWTRAPIClient(userID: userID)
         }
         
+        
         homeTimelineRequest()
+        
+        
         
         //ConnectionClient.sharedManager.homeTimeline()
 
@@ -38,19 +48,31 @@ class HomeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tweets.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellID = "Cell"
 
-        var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: cellID)
+        /*
+        var cell: TweetTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellID) as! TweetTableViewCell
+        if (cell == nil) {
+            cell = TweetTableViewCell(style:UITableViewCellStyle.subtitle, reuseIdentifier:cellID)
+        }
+        
+        //configure
+        var innerView = InnerView(with: tweets[indexPath.row])
+ 
+        
+        cell.configureCell(with: innerView)
+        */
+        
+        var cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellID)!
         if (cell == nil) {
             cell = UITableViewCell(style:UITableViewCellStyle.subtitle, reuseIdentifier:cellID)
         }
-        cell!.textLabel!.text = "\(indexPath.row)"
-    
-        return cell!
+ 
+        return cell
     }
     
     func homeTimelineRequest() {
@@ -65,14 +87,11 @@ class HomeViewController: UITableViewController {
             }
             
             do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as! NSArray
                 print("JSON: ",json)
                 
-                /*
-                for status in json {
-                    print("Text: ", status["text"])
-                }
-                */
+                //parsing JSON, make an array [Tweet], self.tweets = [Tweet]
+                
             } catch let JSONError as NSError {
                 print("JSON error:",JSONError.localizedDescription)
             }
@@ -81,8 +100,9 @@ class HomeViewController: UITableViewController {
     
     
     @IBAction func logout() {
-        ConnectionClient.sharedManager.deauthorize()
-        self.dismiss(animated: true){}
+        Twitter.sharedInstance().sessionStore.logOutUserID((client?.userID)!)
+        UserDefaults.standard.removeObject(forKey: "sessionStore")
+        self.performSegue(withIdentifier: "WelcomeSegue", sender: self)
 
     }
 }

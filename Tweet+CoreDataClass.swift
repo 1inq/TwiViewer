@@ -2,7 +2,7 @@
 //  Tweet+CoreDataClass.swift
 //  
 //
-//  Created by Александр Сорокин on 04.12.2017.
+//  Created by Александр Сорокин on 05.12.2017.
 //
 //
 

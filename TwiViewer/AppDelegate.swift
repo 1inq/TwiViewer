@@ -17,10 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var welcomeDelay:Bool = false
     var connectionStatus : Bool = false
+    
+    var sessionStore: TWTRSession?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         Twitter.sharedInstance().start(withConsumerKey: ApplicationCredentials.CONSUMERKEY, consumerSecret: ApplicationCredentials.CONSUMERSECRET)
+        
+        print("Retrive session status: ",retriveSessionStore())
+        
         return true
     }
 
@@ -52,6 +58,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return Twitter.sharedInstance().application(app, open: url, options: options)
+    }
+    
+    func saveSessionStore() {
+        let sessionStoreData: NSData = NSKeyedArchiver.archivedData(withRootObject: self.sessionStore!) as NSData
+        UserDefaults.standard.set(sessionStoreData, forKey: "sessionStore")
+        UserDefaults.standard.synchronize()
+    }
+    
+    func retriveSessionStore() -> Bool {
+        
+        let sessionStoreData: NSData? = UserDefaults.standard.object(forKey: "sessionStore") as? NSData
+        if sessionStoreData != nil {
+            let sessionStore = NSKeyedUnarchiver.unarchiveObject(with: sessionStoreData as! Data) as? TWTRSession
+            self.sessionStore = sessionStore
+            UserDefaults.standard.removeObject(forKey: "sessionStore")
+            return true
+        } else {
+            //print(error)
+            print("Unable to retriveSessionStore")
+            return false
+        }
     }
     
     /*

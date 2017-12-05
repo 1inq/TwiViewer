@@ -2,7 +2,7 @@
 //  Tweet+CoreDataProperties.swift
 //  
 //
-//  Created by Александр Сорокин on 04.12.2017.
+//  Created by Александр Сорокин on 05.12.2017.
 //
 //
 
@@ -17,7 +17,7 @@ extension Tweet {
     }
 
     @NSManaged public var id: String?
-    @NSManaged public var image: NSData?
+    @NSManaged public var image: String?
     @NSManaged public var name: String?
     @NSManaged public var screenName: String?
     @NSManaged public var text: String?

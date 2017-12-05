@@ -16,6 +16,8 @@
 		7306FA3B1FCEA18800A5C951 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA3A1FCEA18800A5C951 /* WelcomeViewController.swift */; };
 		7306FA461FCED25B00A5C951 /* ConnectionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA451FCED25B00A5C951 /* ConnectionClient.swift */; };
 		7306FA481FCEDA6400A5C951 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7306FA471FCEDA6400A5C951 /* Default-568h@2x.png */; };
+		73205E311FD67CF100BC81FF /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73205E301FD67CF100BC81FF /* TweetTableViewCell.swift */; };
+		73205E331FD680ED00BC81FF /* InnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73205E321FD680ED00BC81FF /* InnerView.swift */; };
 		73878ACA1FD1D0AC00EE109D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73878AC91FD1D0AC00EE109D /* HomeViewController.swift */; };
 		73AF9FA61FCEE39300A02CDA /* ApplicationCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF9FA51FCEE39300A02CDA /* ApplicationCredentials.swift */; };
 		73AF9FA81FCF357E00A02CDA /* TestHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF9FA71FCF357E00A02CDA /* TestHandle.swift */; };
@@ -35,6 +37,8 @@
 		7306FA3A1FCEA18800A5C951 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		7306FA451FCED25B00A5C951 /* ConnectionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionClient.swift; sourceTree = "<group>"; };
 		7306FA471FCEDA6400A5C951 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		73205E301FD67CF100BC81FF /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		73205E321FD680ED00BC81FF /* InnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerView.swift; sourceTree = "<group>"; };
 		73878AC91FD1D0AC00EE109D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73AF9FA51FCEE39300A02CDA /* ApplicationCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCredentials.swift; sourceTree = "<group>"; };
 		73AF9FA71FCF357E00A02CDA /* TestHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHandle.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				7306FA291FCE9EFB00A5C951 /* Main.storyboard */,
 				7306FA311FCE9EFB00A5C951 /* LaunchScreen.storyboard */,
 				7306FA2F1FCE9EFB00A5C951 /* Assets.xcassets */,
+				73205E301FD67CF100BC81FF /* TweetTableViewCell.swift */,
+				73205E321FD680ED00BC81FF /* InnerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,12 +225,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwiftAlamofire/OAuthSwiftAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwiftAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -276,7 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				73AF9FA61FCEE39300A02CDA /* ApplicationCredentials.swift in Sources */,
+				73205E331FD680ED00BC81FF /* InnerView.swift in Sources */,
 				73D0B5EA1FD4244E002DB597 /* TweetsCData.swift in Sources */,
+				73205E311FD67CF100BC81FF /* TweetTableViewCell.swift in Sources */,
 				7306FA3B1FCEA18800A5C951 /* WelcomeViewController.swift in Sources */,
 				73878ACA1FD1D0AC00EE109D /* HomeViewController.swift in Sources */,
 				73AF9FA81FCF357E00A02CDA /* TestHandle.swift in Sources */,
