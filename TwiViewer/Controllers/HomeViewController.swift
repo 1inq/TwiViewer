@@ -87,7 +87,7 @@ class HomeViewController: UITableViewController {
             }
             
             do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: []) as! NSArray
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [NSDictionary]
                 print("JSON: ",json)
                 
                 //parsing JSON, make an array [Tweet], self.tweets = [Tweet]

@@ -1,0 +1,6 @@
+framework module Pods_TwiViewer {
+  umbrella header "Pods-TwiViewer-umbrella.h"
+
+  export *
+  module * { export * }
+}
