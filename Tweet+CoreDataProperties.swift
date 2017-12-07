@@ -2,7 +2,7 @@
 //  Tweet+CoreDataProperties.swift
 //  
 //
-//  Created by Александр Сорокин on 05.12.2017.
+//  Created by Александр Сорокин on 07.12.2017.
 //
 //
 
@@ -16,6 +16,7 @@ extension Tweet {
         return NSFetchRequest<Tweet>(entityName: "Tweet")
     }
 
+    @NSManaged public var created_at: NSDate?
     @NSManaged public var id: String?
     @NSManaged public var image: String?
     @NSManaged public var name: String?

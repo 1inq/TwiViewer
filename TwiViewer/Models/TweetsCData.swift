@@ -9,15 +9,9 @@
 import Foundation
 import CoreData
 
-struct TweetStruct {
-    var id: String?
-    var name: String?
-    var screenName: String?
-    var image: String?
-    var text: String?
-}
-
 class TweetsCData  {
+    
+    static let instance = TweetsCData.init()
     
     // MARK: - Core Data stack
     
@@ -65,13 +59,14 @@ class TweetsCData  {
     }
     
     func clearCD() {
-        let tweet = NSEntityDescription.entity(forEntityName: "Tweet", in: persistentContainer.viewContext)
+        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName:"Tweet")
         //let description = NSEntityDescription.entity(forEntityName: "Tweet", in: persistentContainer.viewContext)
         do {
-            let resultArray = try persistentContainer.viewContext.execute(request) as! [Tweet]
-            for tweet: Tweet in resultArray {
-                persistentContainer.viewContext.delete(tweet)
+            let resultArray = try persistentContainer.viewContext.fetch(request)
+            for tweet in resultArray  {
+                persistentContainer.viewContext.delete(tweet as! Tweet)
+                self.saveContext()
             }
         } catch {
             let nserror = error as NSError
@@ -83,35 +78,48 @@ class TweetsCData  {
     
     func addObjectsToCD(tweets: [TweetStruct]) {
         for tweet in tweets {
-            let insertTweet = NSEntityDescription.insertNewObject(forEntityName: "Tweet", into: persistentContainer.viewContext)
-            insertTweet.setValue(tweet.id ?? "", forKey: "id")
-            insertTweet.setValue(tweet.name ?? "", forKey: "name")
-            insertTweet.setValue(tweet.screenName ?? "", forKey: "screen")
-            insertTweet.setValue(tweet.text ?? "", forKey: "text")
-            insertTweet.setValue(tweet.image ?? "", forKey: "image")
+            let tweetForInsert = NSEntityDescription.insertNewObject(forEntityName: "Tweet", into: persistentContainer.viewContext)
+
             
+            tweetForInsert.setValue(tweet.id_str ?? "", forKey: "id")
+            tweetForInsert.setValue(tweet.name ?? "", forKey: "name")
+            tweetForInsert.setValue(tweet.screenName ?? "", forKey: "screenName")
+            tweetForInsert.setValue(tweet.text ?? "", forKey: "text")
+            
+            /*
+            let imageURL = URL(string: tweet.image)
+            let data : NSData
+            DispatchQueue.main.async {
+                let data = try? Data(contentsOf: imageURL!)
+            }
+            tweetForInsert.setValue(data, forKey: "image")
+            */
+            tweetForInsert.setValue(tweet.image ?? "", forKey: "image")
+            
+            tweetForInsert.setValue(tweet.created_at ?? Date(timeIntervalSince1970: 0), forKey: "created_at")
+            self.saveContext()
         }
     }
     
     func printCD() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName:"Tweet")
-        //let description = NSEntityDescription.entity(forEntityName: "Tweet", in: persistentContainer.viewContext)
         do {
             let resultArray = try persistentContainer.viewContext.fetch(request) as! [Tweet]
             for tweet: Tweet in resultArray{
-                print("Tweet ID: ",tweet.id ?? "")
-                print("Tweet ID: ",tweet.name ?? "")
-                print("Tweet ID: ",tweet.screenName ?? "")
-                print("Tweet ID: ",tweet.text ?? "")
+                print("Tweet ID: \(tweet.id), name: \(tweet.name), screenName: \(tweet.screenName), text: \(tweet.text) ")
+                
             }
         }catch {
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
+        print("\n")
     }
     
     func allObjects() -> [Tweet]{
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tweet")
+        let sort = NSSortDescriptor(key: #keyPath(Tweet.created_at), ascending: false)
+        request.sortDescriptors = [sort]
         do {
             let fetchedEntities = try persistentContainer.viewContext.fetch(request) as! [Tweet]
             return fetchedEntities

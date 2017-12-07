@@ -17,7 +17,7 @@
 		7306FA461FCED25B00A5C951 /* ConnectionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FA451FCED25B00A5C951 /* ConnectionClient.swift */; };
 		7306FA481FCEDA6400A5C951 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7306FA471FCEDA6400A5C951 /* Default-568h@2x.png */; };
 		73205E311FD67CF100BC81FF /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73205E301FD67CF100BC81FF /* TweetTableViewCell.swift */; };
-		73205E331FD680ED00BC81FF /* InnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73205E321FD680ED00BC81FF /* InnerView.swift */; };
+		7374EA321FD6DA7A00F252F8 /* TweetStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374EA311FD6DA7A00F252F8 /* TweetStruct.swift */; };
 		73878ACA1FD1D0AC00EE109D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73878AC91FD1D0AC00EE109D /* HomeViewController.swift */; };
 		73AF9FA61FCEE39300A02CDA /* ApplicationCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF9FA51FCEE39300A02CDA /* ApplicationCredentials.swift */; };
 		73AF9FA81FCF357E00A02CDA /* TestHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF9FA71FCF357E00A02CDA /* TestHandle.swift */; };
@@ -38,7 +38,7 @@
 		7306FA451FCED25B00A5C951 /* ConnectionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionClient.swift; sourceTree = "<group>"; };
 		7306FA471FCEDA6400A5C951 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		73205E301FD67CF100BC81FF /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
-		73205E321FD680ED00BC81FF /* InnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerView.swift; sourceTree = "<group>"; };
+		7374EA311FD6DA7A00F252F8 /* TweetStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetStruct.swift; sourceTree = "<group>"; };
 		73878AC91FD1D0AC00EE109D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73AF9FA51FCEE39300A02CDA /* ApplicationCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCredentials.swift; sourceTree = "<group>"; };
 		73AF9FA71FCF357E00A02CDA /* TestHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHandle.swift; sourceTree = "<group>"; };
@@ -117,7 +117,6 @@
 				7306FA311FCE9EFB00A5C951 /* LaunchScreen.storyboard */,
 				7306FA2F1FCE9EFB00A5C951 /* Assets.xcassets */,
 				73205E301FD67CF100BC81FF /* TweetTableViewCell.swift */,
-				73205E321FD680ED00BC81FF /* InnerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +129,7 @@
 				73AF9FA71FCF357E00A02CDA /* TestHandle.swift */,
 				7306FA2C1FCE9EFB00A5C951 /* TwiViewer.xcdatamodeld */,
 				73D0B5E91FD4244E002DB597 /* TweetsCData.swift */,
+				7374EA311FD6DA7A00F252F8 /* TweetStruct.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,8 +283,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7374EA321FD6DA7A00F252F8 /* TweetStruct.swift in Sources */,
 				73AF9FA61FCEE39300A02CDA /* ApplicationCredentials.swift in Sources */,
-				73205E331FD680ED00BC81FF /* InnerView.swift in Sources */,
 				73D0B5EA1FD4244E002DB597 /* TweetsCData.swift in Sources */,
 				73205E311FD67CF100BC81FF /* TweetTableViewCell.swift in Sources */,
 				7306FA3B1FCEA18800A5C951 /* WelcomeViewController.swift in Sources */,
@@ -437,7 +437,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AS.TwiViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -453,7 +453,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AS.TwiViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
