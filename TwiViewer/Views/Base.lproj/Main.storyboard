@@ -44,15 +44,16 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c6p-rE-vR3" userLabel="image">
                                             <rect key="frame" x="16" y="11" width="50" height="50"/>
+                                            <color key="backgroundColor" red="0.2947456228" green="0.60633173129999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="EOv-vW-0Z1"/>
                                                 <constraint firstAttribute="width" constant="50" id="cnQ-za-kOq"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBx-Xb-XXc" userLabel="nameLabel">
-                                            <rect key="frame" x="83" y="11" width="112" height="21"/>
+                                            <rect key="frame" x="83" y="11" width="140" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="112" id="VRU-Y0-Lss"/>
+                                                <constraint firstAttribute="width" constant="140" id="VRU-Y0-Lss"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -66,10 +67,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ps2-xc-geQ" userLabel="screenName">
-                                            <rect key="frame" x="203" y="11" width="156" height="21"/>
+                                            <rect key="frame" x="231" y="11" width="128" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="156" id="8FX-f3-RcA"/>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="156" id="sRU-1v-qaw"/>
+                                                <constraint firstAttribute="width" constant="128" id="8FX-f3-RcA"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="sRU-1v-qaw"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.65099539974619292" green="0.65099539974619292" blue="0.65099539974619292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

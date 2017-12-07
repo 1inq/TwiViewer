@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwiViewer/Controllers/HomeViewController.swift"
-            timestampString = "534347563.689981"
+            timestampString = "534355305.350036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "logout()"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwiViewer/Controllers/HomeViewController.swift"
-            timestampString = "534347563.690596"
+            timestampString = "534355305.35065"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwiViewer/Controllers/HomeViewController.swift"
-            timestampString = "534347563.690862"
+            timestampString = "534355305.350949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwiViewer/Controllers/HomeViewController.swift"
-            timestampString = "534347563.691089"
+            timestampString = "534355305.351228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwiViewer/Controllers/HomeViewController.swift"
-            timestampString = "534347563.691306"
+            timestampString = "534355305.351507"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "homeTimelineRequest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -262,15 +262,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwiViewer/Controllers/HomeViewController.swift"
-            timestampString = "534347563.691541"
+            timestampString = "534355305.351764"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "homeTimelineRequest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -278,7 +278,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwiViewer/Models/TweetsCData.swift"
@@ -291,14 +291,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "TwiViewer.TweetsCData.addObjectsToCD(tweets: Swift.Array&lt;TwiViewer.TweetStruct&gt;) -&gt; ()"
                   moduleName = "TwiViewer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/aleksandrsorokin/Documents/iOS%20Development/Swift/TwiViewer/TwiViewer/Models/TweetsCData.swift"
-                  timestampString = "534347563.850975"
+                  timestampString = "534352688.735378"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
@@ -306,14 +306,14 @@
                   offsetFromSymbolStart = "3102">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "implicit closure #5 : @autoclosure () throws -&gt; Swift.String in TwiViewer.TweetsCData.addObjectsToCD(tweets: Swift.Array&lt;TwiViewer.TweetStruct&gt;) -&gt; ()"
                   moduleName = "TwiViewer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/aleksandrsorokin/Documents/iOS%20Development/Swift/TwiViewer/TwiViewer/Models/TweetsCData.swift"
-                  timestampString = "534347563.854285"
+                  timestampString = "534352688.737818"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
@@ -326,15 +326,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwiViewer/Controllers/HomeViewController.swift"
-            timestampString = "534347563.691812"
+            timestampString = "534355305.352053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -342,23 +342,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TwiViewer/Controllers/HomeViewController.swift"
-            timestampString = "534347563.692015"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwiViewer/Models/TweetsCData.swift"

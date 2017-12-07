@@ -10,6 +10,41 @@ import UIKit
 import TwitterKit
 import SwiftyJSON
 
+
+//MARK: - Async image loading
+let imageCache = NSCache<NSString, AnyObject>()
+
+extension UIImageView {
+    func loadImageUsingCache(withUrl urlString : String) {
+        let url = URL(string: urlString)
+        self.image = nil
+        
+        // check cached image
+        if let cachedImage = imageCache.object(forKey: urlString as NSString) as? UIImage {
+            self.image = cachedImage
+            return
+        }
+        
+        // if not, download image from url
+        URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                if let image = UIImage(data: data!) {
+                    imageCache.setObject(image, forKey: urlString as NSString)
+                    self.image = image
+                }
+            }
+            
+        }).resume()
+    }
+}
+
+//MARK: - HomeViewController
+
 class HomeViewController: UITableViewController {
     
     var tweets: [TweetStruct] = []
@@ -74,27 +109,12 @@ class HomeViewController: UITableViewController {
         cell.screenNameLabel?.text = "@" + self.CoreDataInstance.allObjects()[indexPath.row].screenName!
         cell.nameLabel?.text = self.CoreDataInstance.allObjects()[indexPath.row].name
         
-        /*
-        let imageData = self.CoreDataInstance.allObjects()[indexPath.row].image
-         cell.personalImageView?.image = UIImage(data: imageData!)
-        */
-        
-        let imageURL = URL(fileURLWithPath: self.CoreDataInstance.allObjects()[indexPath.row].image!)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: imageURL)
-            DispatchQueue.main.async {
-                cell.imageView?.image = UIImage(data: data!)
-            }
-        }
-        
-        
+        cell.personalImageView?.loadImageUsingCache(withUrl: self.CoreDataInstance.allObjects()[indexPath.row].image!)
         
         cell.tweetTextLabel?.text = self.CoreDataInstance.allObjects()[indexPath.row].text
         cell.tweetTextLabel?.numberOfLines = 0
         cell.tweetTextLabel?.sizeToFit()
         cell.tweetTextLabel?.layer.cornerRadius = 5
-        
-        
         
         let df = DateFormatter()
         df.dateFormat = "hh:mm dd/MM"
@@ -148,10 +168,11 @@ class HomeViewController: UITableViewController {
                                 if let text = subJson["text"].string {
                                     if let id_str = subJson["id_str"].string {
                                         if let created_at = subJson["created_at"].string {
+                                            
                                             let dateFormatter = DateFormatter()
-                                            //Tue Aug 28 21:16:23 +0000 2012
-                                            dateFormatter.dateFormat = ("EEE MMM dd hh:mm:ss +zzzz yyyy")
-                                            dateFormatter.locale = Locale(identifier: "en_GB")
+                                            //Thu Dec 07 13:55:15 +0000 2017
+                                            dateFormatter.dateFormat = "E MMM dd HH:mm:ss Z y"
+                                            dateFormatter.locale = Locale(identifier: "en_US")
                                             dateFormatter.timeZone = TimeZone(secondsFromGMT: 6*60*60)
                                             let dateObj = dateFormatter.date(from: created_at)
                                             var ts = TweetStruct(id_str: id_str, name: username, screenName: screenName, image: image, text: text, created_at: dateObj as! NSDate)
