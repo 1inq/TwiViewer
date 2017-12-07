@@ -56,9 +56,12 @@ class HomeViewController: UITableViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(refreshdata), for: .valueChanged)
-        tableView.refreshControl = refreshControl
+        
+        /*
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refreshdata), for: .valueChanged)
+        */
+ 
         CoreDataInstance
         
         if let userID = Twitter.sharedInstance().sessionStore.session()?.userID {
@@ -196,7 +199,17 @@ class HomeViewController: UITableViewController {
     }
     
     @objc func refreshdata() {
-        //homeTimelineRequest()
+        DispatchQueue.main.async {
+            self.homeTimelineRequest()
+        }
+        
+            /*
+            tableView.refreshControl?.updateView()
+            tableView.refreshControl?.refreshControl.endRefreshing()
+            tableView.refreshControl?.activityIndicatorView.stopAnimating()
+            */
+        tableView.reloadData()
+        tableView.refreshControl?.endRefreshing()
     }
     
     @objc func logout() {
