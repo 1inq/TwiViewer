@@ -15,13 +15,10 @@ class WelcomeViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let CoreDataInstance = TweetsCData.instance
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("!WelcomeCOntroller was loaded!")
-        //CoreDataInstance.clearCD() //clear CoreData for new user
-        
+        print("!WelcomeController was loaded!")
+
         //if appDelegate.sessionStore == nil {
             let logInButton = TWTRLogInButton(logInCompletion: { session, error in
                 if (session != nil) {
@@ -29,6 +26,11 @@ class WelcomeViewController: UIViewController {
                     self.appDelegate.sessionStore = session
                     self.appDelegate.saveSessionStore()
                     
+                    if let userID = Twitter.sharedInstance().sessionStore.session()?.userID {
+                        let client = TWTRAPIClient(userID: userID)
+                    }
+                    
+                    ConnectionClient.instance.homeTimelineRequest()
                     self.navigationController?.popToRootViewController(animated: true)
                     
                     self.openHome()
@@ -50,29 +52,12 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //self.continueLogin()
     }
     
-    
-    
-    // MARK: - segues 
+    // MARK: - segues
     func openHome() {
-        //self.performSegue(withIdentifier: "HomeSegue", sender: self)
-        
         var storyboard = self.storyboard
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: "HomeController")
         self.navigationController?.pushViewController(homeViewController!, animated: true)
-        
     }
-    
-    func openLoginController() {
-        self.performSegue(withIdentifier: "LoginSegue", sender: self)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: ConnectionClient.UserLoggedInNotification.name, object: nil)
-    }
-    
-    
-    
 }

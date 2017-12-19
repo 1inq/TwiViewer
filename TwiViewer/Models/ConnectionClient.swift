@@ -7,92 +7,45 @@
 //
 
 import UIKit
-import OAuthSwift
 import WebKit
-import Alamofire
+import TwitterKit
+import SwiftyJSON
 
-
-class ConnectionClient : OAuth1Swift {
+class ConnectionClient : TWTRAPIClient {
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    static let instance = ConnectionClient()
+    static let client = TWTRAPIClient.withCurrentUser()
     
-    static let UserLoggedInNotification = Notification(name: Notification.Name(rawValue: "UserLoggedInNotification"))
-    
-    var connectionStatus : Bool?
-    var accessToken : String!
-    var accessSecret: String!
-    
-    var loginSuccess: (()->())?
-    var loginFailure: ((NSError)->())?
-    
-    static let callbackURL = "TwiViewer://oauth-callback"
-    
-    static let sharedManager = ConnectionClient(
-        consumerKey: ApplicationCredentials.CONSUMERKEY,
-        consumerSecret: ApplicationCredentials.CONSUMERSECRET,
-        requestTokenUrl: ApplicationCredentials.REQUESTTOKENURLURL,
-        authorizeUrl: ApplicationCredentials.AUTHORIZEURL,
-        accessTokenUrl: ApplicationCredentials.ACCESSTOKENURLURL
-    )
-    
-
-    func handle() {
+    func homeTimelineRequest() {
+        var tweets : [TweetModel] = []
+        TweetsCData.instance.clearCD()
+        let homeTimeLineEndPoint = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        let params = ["count": "5"]
+        var clientError: NSError?
+        let request = ConnectionClient.client.urlRequest(withMethod: "GET", url: homeTimeLineEndPoint, parameters: params, error: &clientError)
         
-        ConnectionClient.sharedManager.authorize(withCallbackURL: URL(string:ConnectionClient.callbackURL)!,
-                                        success: { (credential, response, parameters) in
-                                            print("Token:  ",credential.oauthToken)
-                                            print("Secret: ",credential.oauthTokenSecret)
-                                    
-                                            self.accessToken = credential.oauthToken
-                                            self.accessSecret = credential.oauthTokenSecret
-                                            print(credential)
-                                            print(parameters["user_id"]!)
-                                            
-                                            ConnectionClient.sharedManager.connectionStatus = true
-                                            self.appDelegate.connectionStatus = true
-                                            
-                                            NotificationCenter.default.post(ConnectionClient.UserLoggedInNotification)
-                                            
-                                        },
-                                        failure: { (error) in
-                                            print(error.localizedDescription)
-                                        }
-        )
-    }
-    
-    func deauthorize(){
-        
-        /*
-        let dictionary : Dictionary = [kSecClass:kSecClassGenericPassword,
-                                       kSecAttrService:ApplicationCredentials.REQUESTTOKENURLURL] as [CFString : Any]
-        let status : OSStatus = SecItemDelete(dictionary as CFDictionary)
-        */
-        
-        
-        let dataTypes = Set([WKWebsiteDataTypeCookies,
-                             WKWebsiteDataTypeLocalStorage, WKWebsiteDataTypeSessionStorage,
-                             WKWebsiteDataTypeWebSQLDatabases, WKWebsiteDataTypeIndexedDBDatabases])
-        
-        WKWebsiteDataStore.default().removeData(ofTypes: dataTypes, modifiedSince: NSDate.distantPast, completionHandler: {})
-        
-        ConnectionClient.sharedManager.accessToken = nil
-        ConnectionClient.sharedManager.accessSecret = nil
-        ConnectionClient.sharedManager.connectionStatus = false
-        appDelegate.connectionStatus = false
-        
-    }
-    
-    func logout() {
-        ConnectionClient.sharedManager.connectionStatus = false
-        appDelegate.connectionStatus = false
-    }
-    
-    func homeTimeline(){
-        Alamofire.request("https://api.twitter.com/1.1/statuses/home_timeline.json").responseJSON{ response  in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")
+        ConnectionClient.client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
+            if connectionError != nil {
+                print("Error", connectionError)
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [NSDictionary]
+                print("JSON: ",json)
+                let json2 = JSON(json)
+                
+                for (index,subJson):(String, JSON) in json2 {
+                    
+                    let ts = TweetModel(withJson: subJson)
+                    tweets.append(ts)
+                }
+                TweetsCData.instance.addObjectsToCD(tweets:tweets)
+                TweetsCData.instance.printCD()
+                //self.tableView.reloadData()
+                print("wait....")
+            } catch let JSONError as NSError {
+                print("JSON error:",JSONError.localizedDescription)
+            }
         }
-        
     }
 }

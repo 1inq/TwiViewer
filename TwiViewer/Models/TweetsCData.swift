@@ -13,7 +13,7 @@ class TweetsCData  {
     
     static let instance = TweetsCData.init()
     
-    // MARK: - Core Data stack
+// MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {
         /*
@@ -42,7 +42,7 @@ class TweetsCData  {
         return container
     }()
     
-    // MARK: - Core Data Saving support
+// MARK: - Core Data Saving support
     
     func saveContext () {
         let context = persistentContainer.viewContext
@@ -57,6 +57,8 @@ class TweetsCData  {
             }
         }
     }
+    
+//MARK: - CoreData Methods
     
     func clearCD() {
         
@@ -76,27 +78,18 @@ class TweetsCData  {
         
     }
     
-    func addObjectsToCD(tweets: [TweetStruct]) {
+    func addObjectsToCD(tweets: [TweetModel]) {
         for tweet in tweets {
-            let tweetForInsert = NSEntityDescription.insertNewObject(forEntityName: "Tweet", into: persistentContainer.viewContext)
+            let tweetForInsert : Tweet = NSEntityDescription.insertNewObject(forEntityName: "Tweet", into: persistentContainer.viewContext) as! Tweet
 
+            tweetForInsert.id = tweet.id_str
+            tweetForInsert.name = tweet.name
+            tweetForInsert.screenName = tweet.screenName
+            tweetForInsert.text = tweet.text
+            tweetForInsert.image = tweet.image
+            tweetForInsert.created_at = tweet.created_at as Date
+            tweetForInsert.imageData = tweet.imageData as Data
             
-            tweetForInsert.setValue(tweet.id_str ?? "", forKey: "id")
-            tweetForInsert.setValue(tweet.name ?? "", forKey: "name")
-            tweetForInsert.setValue(tweet.screenName ?? "", forKey: "screenName")
-            tweetForInsert.setValue(tweet.text ?? "", forKey: "text")
-            
-            /*
-            let imageURL = URL(string: tweet.image)
-            let data : NSData
-            DispatchQueue.main.async {
-                let data = try? Data(contentsOf: imageURL!)
-            }
-            tweetForInsert.setValue(data, forKey: "image")
-            */
-            tweetForInsert.setValue(tweet.image ?? "", forKey: "image")
-            
-            tweetForInsert.setValue(tweet.created_at ?? Date(timeIntervalSince1970: 0), forKey: "created_at")
             self.saveContext()
         }
     }
